@@ -1,0 +1,23 @@
+.TH DB-RESTORE 1 "" "Version 1.0"
+.SH NAME
+db-restore \- a simple program for restoring databases that were backed up with
+.B db-backup.
+.SH SYNOPSIS
+.B db-restore
+.I source_file
+
+Before this program is run you will need to make changes to the
+.B config/conf
+file in order to choose what you would like to restore.  If nothing is specified in the conf file... nothing will be restored.  If you have used the
+.B db-backup
+program and have not made any changes to the conf file yet, you can safely run the
+.B db-restore
+program.
+.SH EXAMPLES
+.SS How to Run this Program
+
+If you are using Bash, you should be able to use: ./db-restore source_file.tar.gz
+
+If you aren't using Bash, you might be able to use: bash db-restore source_file.tar.gz
+.SH AUTHOR
+summea

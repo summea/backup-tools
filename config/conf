@@ -1,0 +1,156 @@
+##
+## Backup Tools Configuration
+##
+
+VERSION="0.0.1"
+
+#
+# script root directory
+#
+WORKING_DIRECTORY="$(pwd)"
+
+#
+# script lib directory
+#
+LIB_DIRECTORY="$(pwd)/lib"
+
+#
+# tmp directory
+#
+TMP_DIRECTORY="tmp"
+
+#
+# tmp backup name
+#
+TMP_BACKUP_NAME="backup_folder"
+
+#
+# tmp backup directory
+#
+TMP_BACKUP_DIRECTORY="${TMP_DIRECTORY}/${TMP_BACKUP_NAME}"
+
+#
+# destination folder for backup packages
+#
+PACKAGE_DESTINATION="backups/$(date +%Y%m%d)"
+
+#
+# split packages up into smaller files? (TRUE or FALSE)
+#
+PACKAGE_SPLIT=FALSE
+
+#
+# max size for each file in a backup archive
+# m = megabyte
+#
+PACKAGE_SPLIT_SIZE=1m
+
+#
+# backup package filename
+#
+PACKAGE_FILENAME="$(date +%Y%m%d)-backup-package.tar.gz"
+
+#
+# extension to give compressed files
+#
+COMPRESSED_FILE_EXT=".tar.gz"
+
+#
+# backup error log path and filename
+#
+ERROR_LOG="log/error_log.txt"
+
+#
+# destination folder for database backup packages
+#
+DB_PACKAGE_DESTINATION="backups/$(date +%Y%m%d)"
+
+#
+# split database packages up into smaller files? (TRUE or FALSE)
+#
+DB_PACKAGE_SPLIT=FALSE
+
+#
+# max size for each database file in a backup archive
+# m = megabyte
+#
+DB_PACKAGE_SPLIT_SIZE=1m
+
+#
+# database backup package filename
+#
+DB_PACKAGE_FILENAME="$(date +%Y%m%d)-db-backup-package.tar.gz"
+
+#
+# extension to give database files
+#
+DB_FILE_EXT=".sql"
+
+#
+# extension to give compressed database files
+#
+DB_COMPRESSED_FILE_EXT=".tar.gz"
+
+#
+# database error log path and filename
+#
+DB_ERROR_LOG="db_error_log.txt"
+
+#
+# database backup user
+#
+DB_BACKUP_USERNAME="backup"
+DB_BACKUP_PASSWORD=""
+
+#
+# database restore user
+#
+DB_RESTORE_USERNAME="restore"
+DB_RESTORE_PASSWORD=""
+
+#
+# files to backup
+#
+# example:  FILES_TO_BACKUP=(
+#                               "file 1"
+#                               "file 2"
+#                               "file 3"
+#                           )
+
+# note: can be directories, as well
+#
+FILES_TO_BACKUP=(
+                )
+
+#
+# files to exclude from backup
+#
+# example:  EXCLUDE_FILES=(
+#                           "file 1"
+#                           "file 2"
+#                           "file 3"
+#                         )
+#
+EXCLUDE_FILES=(
+              )
+
+#
+# databases to backup
+#
+# Backing up all databases example:
+#
+#   DATABASES_TO_BACKUP=(
+#                           "all"
+#                       )
+#
+#
+# Backing up individual databases example:
+#
+#   DATABASES_TO_BACKUP=(
+#                           "database1"
+#                           "database2"
+#                       )
+#
+DATABASES_TO_BACKUP=(
+                        "all"
+                    )
